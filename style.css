@@ -395,3 +395,18 @@ footer {
 .featured-btn:hover {
   background-color: #16a34a;
 }
+
+/* Mobile Screen Responsive (1 by 1 cards) */
+@media screen and (max-width: 768px) {
+  .pricing-section {
+    padding: 40px 16px !important;
+  }
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+  .pricing-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
