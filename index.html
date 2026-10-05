@@ -520,3 +520,5 @@
 </html>
 
 
+
+<script>function initScroll(){document.querySelectorAll("a,button").forEach(function(b){if(b.innerText&&b.innerText.toLowerCase().indexOf("let")!==-1&&b.innerText.toLowerCase().indexOf("talk")!==-1){b.onclick=function(e){e.preventDefault();var t=Array.from(document.querySelectorAll("h2,h3,section,div")).find(function(x){return x.innerText&&(x.innerText.indexOf("ghuddi_da_great")!==-1||x.innerText.indexOf("Get in Touch")!==-1);});if(t)t.scrollIntoView({behavior:"smooth"});};}});}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",initScroll);}else{initScroll();}</script>
