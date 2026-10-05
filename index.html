@@ -442,13 +442,14 @@
     
     <div class="modal-buttons-group">
       <!-- Discord Option -->
-      <a href="https://discord.com" target="_blank" class="modal-choice-btn discord-choice">
+            <!-- Discord Option (Click to Copy) -->
+      <button type="button" onclick="copyDiscordTag(this)" class="modal-choice-btn discord-choice" style="width: 100%; cursor: pointer;">
         <div class="choice-text">
-          <span class="choice-label">Chat on Discord</span>
-          <span class="choice-name">ghuddi_da_great</span>
+          <span class="choice-label" id="dc-label">Click to copy username</span>
+          <span class="choice-name" id="dc-username">ghuddi_da_great</span>
         </div>
-        <span>→</span>
-      </a>
+        <span id="dc-icon">📋</span>
+      </button>
 
       <!-- Instagram Option -->
       <a href="https://instagram.com/ghuddi_da_great" target="_blank" class="modal-choice-btn insta-choice">
@@ -490,6 +491,21 @@
       btn.addEventListener('click', openOrderModal);
     });
   });
+</script>
+<script>
+  function copyDiscordTag(btn) {
+    navigator.clipboard.writeText("ghuddi_da_great").then(() => {
+      const label = document.getElementById('dc-label');
+      const icon = document.getElementById('dc-icon');
+      if (label) label.innerText = "Copied to clipboard!";
+      if (icon) icon.innerText = "✅";
+      
+      setTimeout(() => {
+        if (label) label.innerText = "Click to copy username";
+        if (icon) icon.innerText = "📋";
+      }, 2500);
+    });
+  }
 </script>
 </body>
 </html>
