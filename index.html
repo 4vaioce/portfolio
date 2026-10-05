@@ -98,6 +98,150 @@
 
 
   <!-- Services & Pricing Section -->
+    <!-- Services & Pricing Section -->
+  <style>
+    .pricing-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .pricing-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .header-line {
+      width: 55px;
+      height: 4px;
+      background-color: #22c55e;
+      border-radius: 2px;
+      margin-bottom: 35px;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      align-items: stretch;
+    }
+    .pricing-card {
+      background-color: #060e09;
+      border: 1.5px solid rgba(34, 197, 94, 0.25);
+      border-radius: 18px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                  border-color 0.3s ease, 
+                  box-shadow 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: #22c55e;
+      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.25), 0 0 15px rgba(34, 197, 94, 0.15);
+    }
+    .pricing-card.featured {
+      background: linear-gradient(180deg, #09170e 0%, #060e09 100%);
+      border: 1.5px solid rgba(34, 197, 94, 0.45);
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.12);
+    }
+    .pricing-card.featured:hover {
+      border-color: #22c55e;
+      box-shadow: 0 12px 35px rgba(34, 197, 94, 0.35);
+    }
+    .plan-badge {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      background: rgba(34, 197, 94, 0.15);
+      color: #22c55e;
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .plan-title {
+      color: #22c55e;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 0 12px 0;
+    }
+    .plan-desc {
+      color: #9ca3af;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0 0 20px 0;
+    }
+    .plan-price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+    .plan-price .currency {
+      color: #22c55e;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .plan-price .amount {
+      color: #ffffff;
+      font-size: 2.4rem;
+      font-weight: 800;
+    }
+    .plan-price .period {
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-left: 4px;
+    }
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .plan-features li {
+      color: #d1d5db;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .plan-features li .check {
+      color: #22c55e;
+      font-weight: bold;
+    }
+    .plan-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #22c55e;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: gap 0.25s ease, color 0.25s ease, text-shadow 0.25s ease;
+      margin-top: auto;
+    }
+    .plan-action:hover {
+      color: #4ade80;
+      gap: 12px;
+      text-shadow: 0 0 12px rgba(34, 197, 94, 0.5);
+    }
+    .plan-action .arrow {
+      transition: transform 0.25s ease;
+    }
+    .plan-action:hover .arrow {
+      transform: translateX(4px);
+    }
+  </style>
+
   <section class="pricing-section">
     <div class="pricing-header">
       <h2>Services & Pricing</h2>
@@ -105,61 +249,70 @@
     </div>
 
     <div class="pricing-grid">
+      <!-- Card 1: Landing / Portfolio -->
       <div class="pricing-card">
-        <div class="card-badge">Basic</div>
-        <h3 class="plan-title">Landing / Portfolio</h3>
-        <p class="plan-desc">Personal branding aur clean responsive static websites ke liye best option.</p>
-        <div class="price">
-          <span class="currency">$</span>
-          <span class="amount">25</span>
-          <span class="duration">/project</span>
+        <div>
+          <span class="plan-badge">Basic</span>
+          <h3 class="plan-title">Landing / Portfolio</h3>
+          <p class="plan-desc">Personal branding aur clean responsive static websites ke liye best option.</p>
+          <div class="plan-price">
+            <span class="currency">$</span>
+            <span class="amount">25</span>
+            <span class="period">/project</span>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check">✔</span> Single / Multi-Page Responsive UI</li>
+            <li><span class="check">✔</span> Ultra-Fast Performance & SEO Friendly</li>
+            <li><span class="check">✔</span> Smooth Animations & Modern Design</li>
+            <li><span class="check">✔</span> GitHub Pages / Netlify Deployment</li>
+            <li><span class="check">✔</span> Contact Form & Social Links Setup</li>
+          </ul>
         </div>
-        <ul class="features-list">
-          <li>✔ Single / Multi-Page Responsive UI</li>
-          <li>✔ Ultra-Fast Performance & SEO Friendly</li>
-          <li>✔ Smooth Animations & Modern Design</li>
-          <li>✔ GitHub Pages / Netlify Deployment</li>
-          <li>✔ Contact Form & Social Links Setup</li>
-        </ul>
-        <a href="#contact" class="pricing-btn">Order Now</a>
+        <a href="#contact" class="plan-action">Order Now <span class="arrow">→</span></a>
       </div>
 
+      <!-- Card 2: E-Commerce Store (Featured) -->
       <div class="pricing-card featured">
-        <div class="card-badge featured-badge">Most Popular</div>
-        <h3 class="plan-title">E-Commerce Store</h3>
-        <p class="plan-desc">Full-featured online store apne products sell karne ke liye complete setup.</p>
-        <div class="price">
-          <span class="currency">$</span>
-          <span class="amount">65</span>
-          <span class="duration">/project</span>
+        <div>
+          <span class="plan-badge">Popular</span>
+          <h3 class="plan-title">E-Commerce Store</h3>
+          <p class="plan-desc">Full-featured online store apne products sell karne ke liye complete setup.</p>
+          <div class="plan-price">
+            <span class="currency">$</span>
+            <span class="amount">65</span>
+            <span class="period">/project</span>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check">✔</span> Complete Product Catalog & Filter System</li>
+            <li><span class="check">✔</span> Dynamic Cart & Checkout System</li>
+            <li><span class="check">✔</span> Mobile-First Optimized Experience</li>
+            <li><span class="check">✔</span> Order Tracking & Category Pages</li>
+            <li><span class="check">✔</span> Deployment & 1 Month Bug Support</li>
+          </ul>
         </div>
-        <ul class="features-list">
-          <li>✔ Complete Product Catalog & Filter System</li>
-          <li>✔ Dynamic Cart & Checkout System</li>
-          <li>✔ Mobile-First Optimized Experience</li>
-          <li>✔ Order Tracking & Category Pages</li>
-          <li>✔ Deployment & 1 Month Bug Support</li>
-        </ul>
-        <a href="#contact" class="pricing-btn featured-btn">Order Now</a>
+        <a href="#contact" class="plan-action">Order Now <span class="arrow">→</span></a>
       </div>
 
+      <!-- Card 3: Custom Discord Bot / App -->
       <div class="pricing-card">
-        <div class="card-badge">Custom</div>
-        <h3 class="plan-title">Discord Bot / Web App</h3>
-        <p class="plan-desc">Automated tools, interactive moderation bots ya dynamic web apps.</p>
-        <div class="price">
-          <span class="currency">$</span>
-          <span class="amount">40</span>
-          <span class="duration">/project</span>
+        <div>
+          <span class="plan-badge">Custom</span>
+          <h3 class="plan-title">Discord Bot / Web App</h3>
+          <p class="plan-desc">Automated tools, interactive moderation bots ya dynamic web apps.</p>
+          <div class="plan-price">
+            <span class="currency">$</span>
+            <span class="amount">40</span>
+            <span class="period">/project</span>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check">✔</span> Slash Commands & Moderation Rules</li>
+            <li><span class="check">✔</span> Database Integration (Storage & Logs)</li>
+            <li><span class="check">✔</span> 24/7 Hosting Setup Guidance</li>
+            <li><span class="check">✔</span> Clean & Documented Source Code</li>
+            <li><span class="check">✔</span> Custom API Integrations</li>
+          </ul>
         </div>
-        <ul class="features-list">
-          <li>✔ Slash Commands & Moderation Rules</li>
-          <li>✔ Database Integration (Storage & Logs)</li>
-          <li>✔ 24/7 Hosting Setup Guidance</li>
-          <li>✔ Clean & Documented Source Code</li>
-          <li>✔ Custom API Integrations</li>
-        </ul>
-        <a href="#contact" class="pricing-btn">Order Now</a>
+        <a href="#contact" class="plan-action">Order Now <span class="arrow">→</span></a>
       </div>
     </div>
   </section>
